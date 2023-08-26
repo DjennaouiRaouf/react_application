@@ -1,24 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import NavigationBar from "./components/base/NavigationBar";
+import Footer from "./components/base/Footer";
+import MessageToast from "./components/base/MessageToast";
+import {Button} from "react-bootstrap";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "./redux-toolkit/store/store";
+import {openMessageToast} from "./redux-toolkit/slices/MessageToastSlice";
 
 function App() {
-  return (
+    const dispatch = useDispatch();
+    const { show,code,title,text } = useSelector((state: RootState) => state.messageToast);
+
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <NavigationBar/>
+
+    <Footer/>
+        <Button onClick={()=>dispatch(openMessageToast({code:10,text:"warning"}))}> Toast</Button>
+        <MessageToast/>
     </div>
   );
 }
