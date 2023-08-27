@@ -8,6 +8,7 @@ import {Button} from "react-bootstrap";
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "./redux-toolkit/store/store";
 import {openMessageToast} from "./redux-toolkit/slices/MessageToastSlice";
+import Login from "./components/base/Login";
 
 function App() {
     const dispatch = useDispatch();
@@ -15,11 +16,11 @@ function App() {
 
     return (
     <div className="App">
-     <NavigationBar/>
-
-    <Footer/>
-        <Button onClick={()=>dispatch(openMessageToast({code:10,text:"warning"}))}> Toast</Button>
+        <NavigationBar/>
+        <Login/>
         <MessageToast/>
+        <Footer/>
+
     </div>
   );
 }

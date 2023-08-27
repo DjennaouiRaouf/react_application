@@ -3,7 +3,7 @@ import Toast from 'react-bootstrap/Toast';
 import ToastContainer from 'react-bootstrap/ToastContainer';
 import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../../redux-toolkit/store/store";
-import {closeMessageToast} from "../../../redux-toolkit/slices/MessageToastSlice";
+import {closeMessageToast, Code} from "../../../redux-toolkit/slices/MessageToastSlice";
 type MessageToastProps = {
   //
 };
@@ -22,7 +22,7 @@ const MessageToast: React.FC = () => {
                     height="1em"
                     viewBox="0 0 20 20"
                     fill="none"
-                    style={{ fontSize:25, marginRight:3}}
+                    style={{ fontSize:25, marginRight:3, color:code}}
 
                 >
                     <path
@@ -32,10 +32,11 @@ const MessageToast: React.FC = () => {
                         fill="currentColor"
                     />
                 </svg>
-                <strong className="me-auto">{title}</strong>
+                <strong className="me-auto" style={{color:code}}>{title}</strong>
 
             </Toast.Header>
-            <Toast.Body>{text}</Toast.Body>
+
+            <Toast.Body style={{color:code}}>{text}</Toast.Body>
         </Toast>
         </ToastContainer>
     );
