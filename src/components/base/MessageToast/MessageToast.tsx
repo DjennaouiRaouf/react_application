@@ -13,7 +13,7 @@ const MessageToast: React.FC = () => {
     const { show,code,title,text } = useSelector((state: RootState) => state.messageToast);
 
     return(
-        <ToastContainer  className="p-3" style={{  position: "fixed", bottom: "20px", right: "30px",zIndex:1 }}>
+        <ToastContainer  className="p-3" style={{ position: "fixed", bottom: "20px", right: "30px",zIndex:1 }}>
         <Toast onClose={() => dispatch(closeMessageToast())} show={show} delay={3000} autohide >
             <Toast.Header>
                 <svg
