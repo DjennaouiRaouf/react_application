@@ -36,7 +36,7 @@ const MessageToast: React.FC = () => {
 
             </Toast.Header>
 
-            <Toast.Body style={{color:code}}>{text}</Toast.Body>
+            <Toast.Body style={{background:'#fff',color:code}}>{text}</Toast.Body>
         </Toast>
         </ToastContainer>
     );
