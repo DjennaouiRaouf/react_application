@@ -37,7 +37,7 @@ const Login: React.FC = () => {
     if(email !== "" && password !== ""){
       dispatch(openMessageToast({code:Code.SUCCESS,title:"Login",text:"loggin sucessfull"}))
     }else{
-      dispatch(openMessageToast({code:Code.ERROR,title:"login",text:"email or password is not valid"}))
+      dispatch(openMessageToast({code:Code.ERROR,title:"login",text:"email or password is empty"}))
     }
 
   }

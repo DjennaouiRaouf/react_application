@@ -16,9 +16,10 @@ function App() {
 
     return (
     <div className="App">
+        <NavigationBar/>
         <Login/>
         <MessageToast/>
-
+        <Footer/>
 
     </div>
   );
