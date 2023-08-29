@@ -1,6 +1,5 @@
 import React from "react";
-import logo from './logo.png'
-import avatar from './avatar.png'
+import logo from './logo.png';
 import Avatar from "react-avatar";
 
 type NavigationBarProps = {
@@ -59,7 +58,7 @@ const NavigationBar: React.FC = () => {
                           href="#"
                           style={{ color: "rgba(0,0,0,0.65)" }}
                       >
-                          <Avatar name="Djennaoui raouf" size="50" round={true} src={avatar} />
+                          <Avatar name="Djennaoui raouf" size="50" round={true} src={""} />
                       </a>
                       <div
                           className="dropdown-menu dropdown-menu shadow dropdown-menu-end animated--grow-in"
