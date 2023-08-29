@@ -1,8 +1,8 @@
 import React from "react";
-
 import logo from './logo.png'
 import avatar from './avatar.png'
 import Avatar from "react-avatar";
+
 type NavigationBarProps = {
   //
 };
@@ -17,7 +17,7 @@ const NavigationBar: React.FC = () => {
           <div className="container">
             <a className="navbar-brand d-flex align-items-center" href="#">
       <span>
-        <img src={logo} width="120px" height="70px" />
+        <img src={logo} width="130px" height="30px" />
       </span>
             </a>
             <button
