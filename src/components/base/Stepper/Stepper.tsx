@@ -62,23 +62,29 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
                         </form>
                         <div className="row" style={{ height: 50, marginBottom: 25 }}>
                           <div className="col" style={{ marginTop: 10 }}>
-                            <button
-                                className="btn btn-primary btn-user w-50"
-                                onClick={prevStep} hidden={currentStep === 0}
-                                style={{background: "#df162c", borderColor: "#df162c"}}
-                            >
-                              Previous
-                            </button>
+                            {currentStep > 0 &&
+                                <button
+                                    className="btn btn-primary btn-user w-50"
+                                    onClick={prevStep}
+                                        style={{background: "#df162c", borderColor: "#df162c"}}
+                                >
+                                  Previous
+                                </button>
+                            }
 
                           </div>
                           <div className="col" style={{ marginTop: 10 }}>
-                            <button
-                                className="btn btn-primary  btn-user w-50"
-                                onClick={nextStep} hidden={currentStep === steps.length - 1}
-                                style={{background: "#df162c", borderColor: "#df162c"}}
-                            >
-                              Next
-                            </button>
+                            {currentStep < steps.length - 1 &&
+                                <button
+                                    className="btn btn-primary  btn-user w-50"
+                                    onClick={nextStep}
+                                    style={{background: "#df162c", borderColor: "#df162c"}}
+                                >
+                                  Next
+                                </button>
+
+
+                            }
                             {currentStep === steps.length - 1 &&
                                 <button
                                     className="btn btn-primary  btn-user w-50"
