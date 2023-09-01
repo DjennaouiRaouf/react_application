@@ -55,6 +55,7 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
                         <div className="text-center">
                           <h4 className="text-dark mb-4">Sign Up !</h4>
                         </div>
+
                         <hr />
                         <div className="user">
                           {steps[currentStep].content}
