@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {RootState} from "../../../../redux-toolkit/store/store";
 
 type StepOneProps = {
   //
@@ -6,7 +8,10 @@ type StepOneProps = {
 
 const StepOne: React.FC = () =>{
 
-  return(
+    const dispatch = useDispatch();
+    const { show,code,title,text } = useSelector((state: RootState) => state.messageToast);
+
+    return(
 
       <div className="user" style={{ height: "70%" }}>
         <div className="mb-3">
