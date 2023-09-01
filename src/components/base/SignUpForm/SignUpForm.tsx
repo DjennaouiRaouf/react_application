@@ -9,7 +9,7 @@ type SignUpFormProps = {
 const SignUpForm: React.FC = () => {
     const CreateUser: React.FC = () =>{
         return(
-            <form className="user" style={{ height: "70%" }}>
+            <div className="user" style={{ height: "70%" }}>
                 <div className="mb-3">
                     <input className="form-control" type="text" placeholder="Username" />
                 </div>
@@ -49,7 +49,7 @@ const SignUpForm: React.FC = () => {
                         </label>
                     </div>
                 </div>
-            </form>
+            </div>
 
 
         );
@@ -57,12 +57,14 @@ const SignUpForm: React.FC = () => {
 
     const Enable2FA: React.FC = () =>{
         return(
-            <form className="user" style={{ height: "70%" }}>
-                <div className="mb-3" style={{ height: "90%" }}>
-                    <QRCode value={"NYUEJRJLTBJKN63Y3ZYEFHCUWORE2DZS"} />
+            <div className="user" style={{ height: "70%" }}>
+                <div className="mb-3">
+                    <QRCode value={"otpauth://totp/codepython.com:rdjennaoui?secret=NYUEJRJLTBJKN63Y3ZYEFHCUWORE2DZS&issuer=codepython.com"}
+                            style={{width:"60%",height:"60%" }}
+                    />
                 </div>
                 <label className="form-label">Scan this Qr Code with Google Auth</label>
-            </form>
+            </div>
 
         );
     }

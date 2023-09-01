@@ -40,7 +40,7 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
             <div className="col-md-9 col-lg-12 col-xl-10">
               <div className="card shadow-lg o-hidden border-0 my-5">
                 <div className="card-body p-0">
-                  <div className="row">
+                  <div className="row w-100" >
                     <div className="col-lg-6 d-none d-lg-flex">
                       <div
                           className="flex-grow-1 bg-login-image"
@@ -56,29 +56,29 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
                           <h4 className="text-dark mb-4">Sign Up !</h4>
                         </div>
                         <hr />
-                        <form className="user">
+                        <div className="user">
                           {steps[currentStep].content}
                           <hr />
-                        </form>
-                        <div className="row" style={{ height: 50, marginBottom: 25 }}>
-                          <div className="col" style={{ marginTop: 10 }}>
+                        </div>
+                        <div className="btn-group" role="group" >
                             {currentStep > 0 &&
                                 <button
                                     className="btn btn-primary btn-user w-50"
                                     onClick={prevStep}
-                                        style={{background: "#df162c", borderColor: "#df162c"}}
+                                        style={{background: "#df162c", borderColor: "#df162c"
+                                , marginRight:"10px",marginBottom:"10px"}}
                                 >
                                   Previous
                                 </button>
                             }
 
                           </div>
-                          <div className="col" style={{ marginTop: 10 }}>
                             {currentStep < steps.length - 1 &&
                                 <button
                                     className="btn btn-primary  btn-user w-50"
                                     onClick={nextStep}
-                                    style={{background: "#df162c", borderColor: "#df162c"}}
+                                    style={{background: "#df162c", borderColor: "#df162c"
+                                      , marginRight:"10px",marginBottom:"10px"}}
                                 >
                                   Next
                                 </button>
@@ -89,7 +89,8 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
                                 <button
                                     className="btn btn-primary  btn-user w-50"
                                     onClick={nextStep}
-                                    style={{background: "#df162c", borderColor: "#df162c"}}
+                                    style={{background: "#df162c", borderColor: "#df162c"
+                                      , marginRight:"10px",marginBottom:"10px"}}
                                 >
                                   Validate
                                 </button>
@@ -97,8 +98,6 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
 
 
 
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </div>
