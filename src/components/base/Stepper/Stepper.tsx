@@ -17,6 +17,7 @@ const Stepper: React.FC<StepperProps> = ({ steps }) => {
   };
 
   const nextStep = () => {
+
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
     }

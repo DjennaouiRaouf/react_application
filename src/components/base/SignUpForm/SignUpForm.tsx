@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Stepper from "../Stepper";
 import QRCode from 'qrcode.react';
 
@@ -7,9 +7,14 @@ type SignUpFormProps = {
 };
 
 const SignUpForm: React.FC = () => {
+    const [enabled2FA,setEnabled2FA]=useState<string>("125");
+
     const CreateUser: React.FC = () =>{
+
         return(
+
             <div className="user" style={{ height: "70%" }}>
+            <p>{enabled2FA}</p>
                 <div className="mb-3">
                     <input className="form-control" type="text" placeholder="Username" />
                 </div>
@@ -77,6 +82,7 @@ const SignUpForm: React.FC = () => {
     ];
     return (
         <Stepper steps={steps} />
+
     );
 }
 
