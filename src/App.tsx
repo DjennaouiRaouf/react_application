@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "./redux-toolkit/store/store";
 import Login from "./components/base/Login";
 import MessageToast from "./components/base/MessageToast";
+import TwoFactorAuth from "./components/base/TwoFactorAuth";
 
 function App() {
     const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function App() {
 
         <Login/>
 <MessageToast/>
+        <TwoFactorAuth/>
 
     </div>
   );

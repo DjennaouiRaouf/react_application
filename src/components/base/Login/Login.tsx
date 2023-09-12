@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Form from "react-bootstrap/Form";
 import axios from 'axios';
 import {useDispatch, useSelector} from "react-redux";
@@ -16,6 +16,7 @@ const Login: React.FC = () => {
   const [username,setusername]=useState<string>("");
   const [password,setPassword]=useState<string>("");
   const [validated,setValidated]=useState<boolean>(false);
+  const[windowStyle,setWindowStyle]=useState<any[]>([]);
 
   const handleusernameChange = (e:any) => {
     setusername(e.target.value);
@@ -55,36 +56,45 @@ const Login: React.FC = () => {
     }
 
   }
-
+  useEffect(() => {
+    // Example GET request
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/authentication/authWindowStyle/`)
+        .then((response) => {
+          setWindowStyle(response.data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+  }, []);
   return (
 
-      <div className="container">
+      <div className="container" >
         <div
             className="card shadow-lg o-hidden border-0 my-5"
-            style={{ height: 500 }}
+            style={{ height: 500,background:"#e2e8f0" }}
         >
-          <div className="card-body p-0">
+          <div className="card-body p-0" style={{background:"#e2e8f0" }}>
             <div className="row" style={{ height: "100%" }}>
               <div
                   className="col-lg-6 d-none d-lg-flex justify-content-lg-center align-items-lg-center"
                   style={{
-                    background: "#ffffff",
+                    background:"#e2e8f0" ,
                     borderTopLeftRadius: 6,
                     borderBottomLeftRadius: 6
                   }}
               >
                 <Carousel >
-                  <Carousel.Item>
-                    <img
-                        className="d-block w-100"
-                        src="https://cdn.bootstrapstudio.io/placeholders/1400x800.png"
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                      <h5>First slide label</h5>
-                      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </Carousel.Caption>
-                  </Carousel.Item>
+                  {windowStyle.map((item,index) =>
+                      <Carousel.Item key={index} interval={1000}>
+                        <img
+                            className="d-block w-100"
+                            src={`${process.env.REACT_APP_API_BASE_URL}`+item.image}
+                            alt="First slide"
+                        />
+                      </Carousel.Item>
+                  )}
+
+
 
                 </Carousel>
 
