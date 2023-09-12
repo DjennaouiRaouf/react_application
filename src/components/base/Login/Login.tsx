@@ -142,12 +142,16 @@ const Login: React.FC = () => {
                     <div className="mb-3">
                       <div className="custom-control custom-checkbox small" />
                     </div>
-                    <button
-                        className="btn btn-primary d-block btn-user w-100"
-                        onClick={(e)=>handleLogin(e)}
-                    >
-                      Login
-                    </button>
+                  <button
+                      className="btn btn-primary d-block btn-user w-100"
+                      style={{background: "#df162c", borderWidth: 0}}
+                      onClick={(e)=>handleLogin(e)}
+                  >
+                    Login
+                  </button>
+
+
+
                     <hr />
 
                   <div className="text-center" />
